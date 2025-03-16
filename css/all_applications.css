@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    color: #333;
+    background-color: #f2e1c7;
+    display: flex;
+  }
+
+  .sidebar {
+    background-color: #835d3b;
+    width: 260px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease-in-out;
+    padding-top: 20px;
+    z-index: 1050;
+  }
+
+  .sidebar.hidden {
+    transform: translateX(-100%);
+  }
+
+  .hamburger {
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #fff;
+    margin-left: 15px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 1100;
+  }
+
+  .sidebar-menu {
+    list-style: none;
+    padding: 50px 0 0 0;
+  }
+
+  .sidebar-menu li {
+    margin: 10px 0;
+  }
+
+  .sidebar-menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s;
+  }
+
+  .sidebar-menu a:hover,
+  .sidebar-menu a.active {
+    background-color: #6e472c;
+  }
+
+  .sidebar-menu a i {
+    margin-right: 15px;
+  }
+
+  .content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 260px;
+    transition: margin-left 0.3s ease-in-out;
+    width: 100%;
+  }
+
+  .content.shifted {
+    margin-left: 0;
+  }
+
+  .navbar {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: #f2e1c7;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: left 0.3s;
+    z-index: 1000;
+  }
+
+  .navbar .hamburger {
+    color: #333;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+   /*------------- Above All CSS Same for All Pages--------------*/
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .table th,
+  .table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ccc;
+  }
+
+  .table th {
+    background-color: #835d3b;
+    color: #fff;
+  }
+
+  @media (max-width: 992px) {
+    .sidebar {
+      transform: translateX(-100%);
+    }
+
+    .sidebar.show {
+      transform: translateX(0);
+    }
+
+    .content {
+      margin-left: 0;
+    }
+  }
